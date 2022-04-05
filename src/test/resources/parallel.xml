@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MainSuite" thread-count="3" parallel="classes">
+    <test name="Gui_tests">
+        <classes>
+            <class name="tests.FileUploaderTest"></class>
+            <class name="tests.PopUpMessageTest"></class>
+            <class name="tests.DialogWindowDisplayTest"></class>
+            <class name="tests.CreateDeleteProjectTest"></class>
+            <class name="tests.LimitValueTest"></class>
+            <class name="tests.LoginNegativeScreenshotTest"></class>
+            <class name="tests.LoginNegativeTest"></class>
+            <class name="tests.DataNegativeTest"></class>
+        </classes>
+    </test>
+
+    <test name="Api_test">
+        <classes>
+            <class name="testsApi.ApiNfeTest"></class>
+            <class name="testsApi.ApiAfeTest"></class>
+        </classes>
+    </test>
+   </suite>
