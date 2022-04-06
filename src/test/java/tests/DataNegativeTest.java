@@ -53,7 +53,7 @@ public class DataNegativeTest extends BaseTest {
         AddTestCasePage addTestCasePage = new AddTestCasePage(driver);
         addTestCasePage.getFileUploadButton().click();
         addTestCasePage.getChoseFileUploadButton().click();
-        Thread.sleep(6000);
+        Thread.sleep(5000);
 
         Robot rb = new Robot();
 
