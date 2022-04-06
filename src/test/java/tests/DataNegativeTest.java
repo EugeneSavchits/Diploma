@@ -30,7 +30,7 @@ public class DataNegativeTest extends BaseTest {
     public void dataNegativeTest() throws InterruptedException, AWTException {
         User user = new User();
         user.setEmail(ReadProperties.getUsername());
-        user.setPassword(ReadProperties.getPassword());
+        user.setPassword(System.getProperty("PASSWORD"));
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(user);

@@ -4,13 +4,12 @@ import baseEntities.BaseTest;
 import core.ReadProperties;
 import models.Project;
 import models.User;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AddProjectPage;
+import pages.AdministrationProjectsPage;
 import pages.DashboardPage;
 import pages.LoginPage;
-import pages.AdministrationProjectsPage;
 import utils.Randomization;
 
 public class CreateDeleteProjectTest extends BaseTest {
@@ -30,7 +29,7 @@ public class CreateDeleteProjectTest extends BaseTest {
     public void addProjectTest () {
         User user = new User();
         user.setEmail(ReadProperties.getUsername());
-        user.setPassword(ReadProperties.getPassword());
+        user.setPassword(System.getProperty("PASSWORD"));
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(user);

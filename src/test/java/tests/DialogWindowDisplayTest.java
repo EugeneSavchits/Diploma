@@ -29,7 +29,7 @@ public class DialogWindowDisplayTest extends BaseTest {
     public void dialogWindowDisplayTest () {
         User user = new User();
         user.setEmail(ReadProperties.getUsername());
-        user.setPassword(ReadProperties.getPassword());
+        user.setPassword(System.getProperty("PASSWORD"));
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(user);
