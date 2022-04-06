@@ -18,7 +18,7 @@ public class BaseApiTest {
         //Setup request Object
         RestAssured.requestSpecification = given()
                 .header(HTTP.CONTENT_TYPE, ContentType.JSON) //указание в каком формате будут приходить данные
-                .auth().preemptive().basic(ReadProperties.getUsername(), ReadProperties.getPassword()); //метод preemptive() для старых сайтов, для новых только basic()
+                .auth().preemptive().basic(ReadProperties.getUsername(), System.getProperty("PASSWORD")); //метод preemptive() для старых сайтов, для новых только basic()
 
     }
 }
