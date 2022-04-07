@@ -9,6 +9,5 @@ import lombok.Data;
 public class Section {
     private String name;
     private String description;
-    //private int suite_id;
 }
 

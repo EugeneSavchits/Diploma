@@ -36,11 +36,14 @@ public class DialogWindowDisplayTest extends BaseTest {
 
         DashboardPage dashboardPage = new DashboardPage(driver);
         dashboardPage.getAddProjectButton().click();
+
         AddProjectPage addProjectPage = new AddProjectPage(driver);
         setupProjects();
         addProjectPage.addProject(addProject);
+
         AdministrationProjectsPage projectViewPage = new AdministrationProjectsPage(driver);
         projectViewPage.dialogWindowDisplay(addProject);
+
         Assert.assertTrue(projectViewPage.getDialogWindow().isDisplayed());
 
     }

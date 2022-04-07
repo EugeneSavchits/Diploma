@@ -53,7 +53,6 @@ public class ApiNfeTest extends BaseApiTest {
     @Test(dependsOnMethods = "addProjectTest")
     public void getProjectTest() {
 
-
         given()
                 .pathParam("project_id", projectID)
                 .when()
@@ -63,7 +62,6 @@ public class ApiNfeTest extends BaseApiTest {
                 .statusCode(HttpStatus.SC_OK)
                 .body("name", is(project.getName()))
                 .body("suite_mode", is(project.getTypeOfProject()));
-
     }
 
     @Test(dependsOnMethods = "getProjectTest")
@@ -87,13 +85,10 @@ public class ApiNfeTest extends BaseApiTest {
                 .body("name", is(milestone.getName()))
                 .body("description", is(milestone.getDescription()))
                 .extract().jsonPath().get("id");
-
-
     }
 
     @Test(dependsOnMethods = "addMilestoneTest")
     public void getMilestoneTest() {
-
 
         Response response = given()
                 .pathParam("milestone_id", milestoneID)
@@ -103,7 +98,6 @@ public class ApiNfeTest extends BaseApiTest {
                 .assertThat()
                 .extract()
                 .response();
-
 
         Assert.assertEquals(response.getBody().jsonPath().get("name"),
                 milestone.getName());
@@ -147,10 +141,6 @@ public class ApiNfeTest extends BaseApiTest {
                 .log().body()
                 .statusCode(HttpStatus.SC_OK)
                 .extract().jsonPath().get("id");
-
-        Response response = given()
-                .pathParam("case_id", caseID)
-                .get(Endpoints.GET_CASE);
     }
 
     @Test(dependsOnMethods = "addCase")
@@ -187,12 +177,10 @@ public class ApiNfeTest extends BaseApiTest {
                 .statusCode(HttpStatus.SC_OK)
                 .body("name", is(updateProject.getName()))
                 .body("announcement", is(updateProject.getAnnouncement()));
-
     }
 
     @Test(dependsOnMethods = "updateProject")
     public void deleteProject() {
-
 
         given()
                 .pathParam("project_id", projectID)

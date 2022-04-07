@@ -4,10 +4,12 @@ import baseEntities.BaseTest;
 import core.ReadProperties;
 import models.Project;
 import models.User;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.*;
+import pages.AddProjectPage;
+import pages.AdministrationProjectsPage;
+import pages.DashboardPage;
+import pages.LoginPage;
 import utils.Randomization;
 
 public class LimitValueTest extends BaseTest {
@@ -24,7 +26,7 @@ public class LimitValueTest extends BaseTest {
     }
 
     @Test
-    public void limitValueTest () throws InterruptedException {
+    public void limitValueTest ()  {
         User user = new User();
         user.setEmail(ReadProperties.getUsername());
         user.setPassword(System.getProperty("PASSWORD"));
@@ -34,9 +36,11 @@ public class LimitValueTest extends BaseTest {
 
         DashboardPage dashboardPage = new DashboardPage(driver);
         dashboardPage.getAddProjectButton().click();
+
         AddProjectPage addProjectPage = new AddProjectPage(driver);
         setupProjects();
         addProjectPage.addProject(addProject);
+
         AdministrationProjectsPage administrationProjectsPage = new AdministrationProjectsPage(driver);
 
         Assert.assertEquals(administrationProjectsPage.lengthNameProject(addProject), 250);

@@ -9,7 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 import utils.Randomization;
-
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
@@ -73,20 +72,9 @@ public class DataNegativeTest extends BaseTest {
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
 
-
-        //Thread.sleep(10000);
-
         Assert.assertTrue(addTestCasePage.getLoadingErrorMessage().isDisplayed());
         Assert.assertEquals(addTestCasePage.getLoadingErrorMessage().getText(), "Loading error");
-
-        //Thread.sleep(10000);
     }
 }
 
-
-//        Assert.assertTrue(header.isDisplayed());
-//        //Assert.assertTrue(header != null);
-//        Assert.assertEquals(fileName.getText(), "oboi-pogonia-gerb-wallpapers-pagonia-belarus-emblem-belarus.jpg");
-//
-//    }
 

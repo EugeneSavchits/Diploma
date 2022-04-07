@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class AddTestCasePage extends BasePage {
 
-    //private static String ENDPOINT = "cases/add/1";
+
     private static final By PAGE_OPENED_IDENTIFIER = By.id("content-inner");
 
     protected By titleTestCaseSelector = By.id("title");
@@ -32,43 +32,43 @@ public class AddTestCasePage extends BasePage {
     public WebElement getTitleTestCaseField() {
         return driver.findElement(titleTestCaseSelector);
     }
+
     public WebElement getPreconditionsField() {
         return driver.findElement(preconditionsSelector);
     }
+
     public WebElement getAddTestCaseButton() {
         return driver.findElement(addTestCaseButton);
     }
-    public WebElement getFileUploadButton () { return driver.findElement(entityAttachmentListSelector);
+
+    public WebElement getFileUploadButton() {
+        return driver.findElement(entityAttachmentListSelector);
     }
-    public WebElement getChoseFileUploadButton () {
+
+    public WebElement getChoseFileUploadButton() {
         waits.waitForVisibility(choseFileUploadButton).isDisplayed();
         return driver.findElement(choseFileUploadButton);
     }
 
-        public WebElement getFileUploadAttach() throws InterruptedException {
-                waits.waitForVisibility(fileUploadAttach);
-                return driver.findElement(fileUploadAttach);
-//            WebElement result;
-//            try {
-//                result = driver.findElement(fileUploadAttach);
-//            } catch (Exception ex) {
-//                Thread.sleep(4000);
-//                result = driver.findElement(fileUploadAttach);
-//            }
-//            return result;
-        }
+    public WebElement getFileUploadAttach() throws InterruptedException {
+        waits.waitForVisibility(fileUploadAttach);
+        return driver.findElement(fileUploadAttach);
+    }
 
-    public WebElement getAttachButton () {
+    public WebElement getAttachButton() {
         waits.waitForClickable(attachButton);
-        return driver.findElement(attachButton);}
+        return driver.findElement(attachButton);
+    }
 
-    public WebElement getFileUpload () {
+    public WebElement getFileUpload() {
         waits.waitForVisibility(fileUpload);
-        return driver.findElement(fileUpload);}
+        return driver.findElement(fileUpload);
+    }
 
-    public WebElement getLoadingErrorMessage(){
+    public WebElement getLoadingErrorMessage() {
         waits.waitForVisibility(loadingErrorMessage);
-        return driver.findElement(loadingErrorMessage);}
+        return driver.findElement(loadingErrorMessage);
+    }
 
     @Override
     protected void openPage() {

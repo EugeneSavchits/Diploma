@@ -1,7 +1,6 @@
 package pages;
 
 import baseEntities.BasePage;
-import enums.ProjectType;
 import models.Project;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -45,15 +44,8 @@ public class DashboardPage extends BasePage {
     public WebElement getPopUpMessage()  {
         waits.waitForVisibility(popUpMessage);
         return driver.findElement(popUpMessage);
-//        WebElement result;
-//        try {
-//            result = driver.findElement(popUpMessage);
-//        } catch (Exception ex) {
-//            Thread.sleep(1000);
-//            result = driver.findElement(popUpMessage);
-//        }
-//        return result;
-    }
+       }
+
     public void getNameProjectButton (Project project) {
         driver.findElement(By.xpath(nameProjectButton.replace("replace", String.valueOf(project.getName())))).click();
     }

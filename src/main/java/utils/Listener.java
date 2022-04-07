@@ -13,7 +13,7 @@ public class Listener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult tr) {
         Object currentClass = tr.getInstance();
-         try {
+        try {
             WebDriver driver = ((BaseTest) currentClass).driver;
             byte[] srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             saveScreenshot(srcFile);

@@ -31,13 +31,10 @@ public class ApiAfeTest extends BaseApiTest {
                 .then()
                 .log().body()
                 .statusCode(HttpStatus.SC_BAD_REQUEST);
-
-
     }
 
     @Test(dependsOnMethods = "negativeAddProjectTest")
     public void negativeGetProjectTest() {
-
 
         given()
                 .pathParam("project_id", "id")
@@ -46,13 +43,10 @@ public class ApiAfeTest extends BaseApiTest {
                 .then()
                 .log().body()
                 .statusCode(HttpStatus.SC_BAD_REQUEST);
-
-
     }
 
     @Test(dependsOnMethods = "negativeAddProjectTest")
     public void negativeGetUserByEmailTest() {
-
 
         given()
                 .pathParam("email", "123@mail.ru")
@@ -61,8 +55,5 @@ public class ApiAfeTest extends BaseApiTest {
                 .then()
                 .log().body()
                 .statusCode(HttpStatus.SC_BAD_REQUEST);
-
-
     }
-
 }

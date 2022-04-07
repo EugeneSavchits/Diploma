@@ -5,8 +5,6 @@ import core.ReadProperties;
 import enums.ProjectType;
 import models.Project;
 import models.User;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -29,7 +27,7 @@ public class FileUploaderTest extends BaseTest {
     }
 
     @Test
-    public void fileUploaderTest () throws InterruptedException, AWTException {
+    public void fileUploaderTest() throws InterruptedException, AWTException {
         User user = new User();
         user.setEmail(ReadProperties.getUsername());
         user.setPassword(System.getProperty("PASSWORD"));
@@ -39,19 +37,20 @@ public class FileUploaderTest extends BaseTest {
 
         DashboardPage dashboardPage = new DashboardPage(driver);
         dashboardPage.getAddProjectButton().click();
+
         AddProjectPage addProjectPage = new AddProjectPage(driver);
         setupProjects();
         addProjectPage.addProject(addProject);
+
         AdministrationProjectsPage administrationProjectsPage = new AdministrationProjectsPage(driver);
         administrationProjectsPage.getDashboardButton().click();
 
-        //driver.findElement(By.id("navigation-dashboard")).click();
         dashboardPage.getNameProjectButton(addProject);
-        //Thread.sleep(4000);
+
         OverviewProjectPage overviewProjectPage = new OverviewProjectPage(driver);
         overviewProjectPage.getAddTestCasesButton().click();
 
-        //driver.findElement(By.id("sidebar-cases-add")).click();
+
         AddTestCasePage addTestCasePage = new AddTestCasePage(driver);
         addTestCasePage.getFileUploadButton().click();
         addTestCasePage.getChoseFileUploadButton().click();
@@ -77,17 +76,11 @@ public class FileUploaderTest extends BaseTest {
 
         addTestCasePage.getFileUploadAttach().isDisplayed();
         addTestCasePage.getAttachButton().click();
-        //Thread.sleep(10000);
-        Assert.assertTrue(addTestCasePage.getFileUpload().isDisplayed());
 
-        //Thread.sleep(10000);
-        }
+        Assert.assertTrue(addTestCasePage.getFileUpload().isDisplayed());
+    }
 }
 
 
-//        Assert.assertTrue(header.isDisplayed());
-//        //Assert.assertTrue(header != null);
-//        Assert.assertEquals(fileName.getText(), "oboi-pogonia-gerb-wallpapers-pagonia-belarus-emblem-belarus.jpg");
-//
-//    }
+
 
