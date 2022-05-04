@@ -11,7 +11,7 @@ import pages.LoginPage;
 public class LoginNegativeScreenshotTest extends BaseTest {
 
 
-    //@Test
+    @Test
     public void loginNegativeScreenshotTest () {
         User user = new User();
         user.setEmail(ReadProperties.getUsername());
@@ -22,7 +22,7 @@ public class LoginNegativeScreenshotTest extends BaseTest {
 
         DashboardPage dashboardPage = new DashboardPage(driver);
 
-        Assert.assertTrue(!dashboardPage.getAddProjectButton().isDisplayed());
+        Assert.assertFalse(dashboardPage.getAddProjectButton().isDisplayed());
     }
 
 }
