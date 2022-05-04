@@ -11,19 +11,19 @@ import pages.LoginPage;
 public class LoginNegativeScreenshotTest extends BaseTest {
 
 
-    @Test
-    public void loginNegativeScreenshotTest () {
-        User user = new User();
-        user.setEmail(ReadProperties.getUsername());
-        user.setPassword(System.getProperty("PASSWORD"));
-
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(user);
-
-        DashboardPage dashboardPage = new DashboardPage(driver);
-
-        Assert.assertFalse(dashboardPage.getAddProjectButton().isDisplayed());
-    }
+//    @Test
+//    public void loginNegativeScreenshotTest () {
+//        User user = new User();
+//        user.setEmail(ReadProperties.getUsername());
+//        user.setPassword(System.getProperty("PASSWORD"));
+//
+//        LoginPage loginPage = new LoginPage(driver);
+//        loginPage.login(user);
+//
+//        DashboardPage dashboardPage = new DashboardPage(driver);
+//
+//        Assert.assertFalse(dashboardPage.getAddProjectButton().isDisplayed());
+//    }
 
 }
 
