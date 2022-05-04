@@ -11,7 +11,7 @@ import pages.LoginPage;
 public class LoginNegativeScreenshotTest extends BaseTest {
 
 
-    @Test
+    //@Test
     public void loginNegativeScreenshotTest () {
         User user = new User();
         user.setEmail(ReadProperties.getUsername());
