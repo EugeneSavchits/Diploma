@@ -51,7 +51,6 @@ public class AdministrationProjectsPage extends BasePage {
         return driver.findElement(By.xpath(openProjectSelector.replace("replace", project.getName())));
     }
 
-
     public void setType (ProjectType type) {
         driver.findElement(By.xpath(typeRadioButtonSelector.replace("replace", String.valueOf(type)))).click();
     }
@@ -83,27 +82,8 @@ public class AdministrationProjectsPage extends BasePage {
 
     public int lengthNameProject (Project project) {
         WebElement result = driver.findElement(By.xpath(containsNameProject.replace("replace", project.getName().substring(0,100))));
-        int lengthName =  result.getText().length();
-        return lengthName;
+        return result.getText().length();
     }
-
-
-
-
-
-//    public void updateProject (Project currentProject, Project newProject)  {
-//        getNameProjectField().clear();
-//        getNameProjectField().sendKeys(newProject.getName());
-//        getAnnouncementSelectorField().clear();
-//        getAnnouncementSelectorField().sendKeys(newProject.getAnnouncement());
-//        if (currentProject.isShowAnnouncement() == false) {
-//
-//        } else {getIsShowAnnouncementField().click();}
-//        setType(newProject.getTypeOfProject());
-//        getIsCompletedField().click();
-//        getSaveProjectButton().click();
-//
-//    }
 
     public void deleteProject (Project addProject) {
         driver.findElement(By.xpath("//*[. = '"+addProject.getName()+"']/following::td[2]")).click();
@@ -113,6 +93,5 @@ public class AdministrationProjectsPage extends BasePage {
 
     public void dialogWindowDisplay (Project addProject) {
         driver.findElement(By.xpath("//*[. = '"+addProject.getName()+"']/following::td[2]")).click();
-
     }
 }

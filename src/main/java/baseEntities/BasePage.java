@@ -31,7 +31,6 @@ public abstract class BasePage {
 
     protected abstract boolean isPageOpened();
 
-
     protected void waitForOpen() {
         int tryCount = 0;
         boolean isPageOpenedIndicator = isPageOpened();

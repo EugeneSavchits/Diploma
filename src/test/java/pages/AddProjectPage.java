@@ -19,7 +19,6 @@ public class AddProjectPage extends BasePage {
     protected By isCompletedSelector = By.id("is_completed");
     protected By addProjectButton = By.id("accept");
 
-
     public AddProjectPage(WebDriver driver) {
         super(driver);
     }
@@ -57,8 +56,6 @@ public class AddProjectPage extends BasePage {
     public WebElement getAddProjectButton () {
         return driver.findElement(addProjectButton);
     }
-
-
 
     public void setType (ProjectType type) {
         driver.findElement(By.xpath(typeRadioButtonSelector.replace("replace", String.valueOf(type)))).click();
