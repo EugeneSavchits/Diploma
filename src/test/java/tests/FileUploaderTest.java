@@ -13,6 +13,7 @@ import utils.Randomization;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
 
 public class FileUploaderTest extends BaseTest {
     Project addProject;
@@ -59,7 +60,9 @@ public class FileUploaderTest extends BaseTest {
         Robot rb = new Robot();
 
         // copying File path to Clipboard
-        StringSelection str = new StringSelection("C:\\Users\\Lenovo\\IdeaProjects\\diploma\\src\\test\\resources\\data\\oboi_pogonia.jpg");
+        File file = new File("src/test/resources/data/oboi_pogonia.jpg");
+        String absolutePath = file.getAbsolutePath();
+        StringSelection str = new StringSelection(absolutePath);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 
         // press Contol+V for pasting

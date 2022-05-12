@@ -12,6 +12,7 @@ import utils.Randomization;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
 
 public class DataNegativeTest extends BaseTest {
     Project addProject;
@@ -57,7 +58,9 @@ public class DataNegativeTest extends BaseTest {
         Robot rb = new Robot();
 
         // copying File path to Clipboard
-        StringSelection str = new StringSelection("C:\\Users\\Lenovo\\Downloads\\Lesson_24 CICD.mp4");
+        File file = new File("src/test/resources/data/Lesson_24 CICD.mp4");
+        String absolutePath = file.getAbsolutePath();
+        StringSelection str = new StringSelection(absolutePath);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 
         // press Contol+V for pasting
