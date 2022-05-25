@@ -85,7 +85,7 @@ public class AdministrationProjectsPage extends BasePage {
         return result.getText().length();
     }
 
-    public void deleteProject (Project addProject) {
+    public void deleteProject (Project addProject)  {
         driver.findElement(By.xpath("//*[. = '"+addProject.getName()+"']/following::td[2]")).click();
         driver.findElement(By.xpath("//strong [. = 'Yes, delete this project (cannot be undone)']")).click();
         driver.findElement(By.xpath("//div[@id='deleteDialog']//a[@class = 'button button-ok button-left button-positive dialog-action-default']")).click();
